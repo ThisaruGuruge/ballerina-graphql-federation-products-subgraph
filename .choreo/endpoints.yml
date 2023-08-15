@@ -1,0 +1,8 @@
+version: 0.1
+
+endpoints:
+- name: Products Subgraph
+  port: 9091
+  type: GraphQL
+  networkVisibility: Project
+  context: /
