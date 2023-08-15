@@ -2,7 +2,7 @@ import product_subgraph.datasource;
 
 import ballerina/graphql;
 
-service on new graphql:Listener(9091) {
+service /graphql on new graphql:Listener(9091) {
     isolated resource function get products() returns Product[] {
         return from ProductInfo productInfo in datasource:getProducts()
             select new (productInfo);
