@@ -1,0 +1,14 @@
+type Query {
+  products: [Product!]!
+  product(id: ID!): Product
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+}
+
+"The `ID` scalar type is a unique identifier that is serialized as a string. It is commonly represented as a string, integer, or UUID."
+scalar ID
