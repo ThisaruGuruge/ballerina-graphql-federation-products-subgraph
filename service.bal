@@ -8,7 +8,7 @@ service graphql:Service / on new graphql:Listener(8090) {
             select new (productInfo);
     }
 
-     resource function get product(@graphql:ID string id) returns Product? {
+     resource function get product(string id) returns Product? {
         ProductInfo? productInfo = datasource:getProduct(id);
         if productInfo is () {
             return;
