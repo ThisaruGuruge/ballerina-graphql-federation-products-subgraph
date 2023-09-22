@@ -1,15 +1,11 @@
-public isolated function getProducts() returns Product[] {
+public isolated function getProducts() returns readonly & Product[] {
     lock {
-        Product[] result = from Product product in products select product;
-        return result.cloneReadOnly();
+        return from Product product in products select product;
     }
 }
 
 public isolated function getProduct(string id) returns Product? {
     lock {
-        if products.hasKey(id) {
-            return products.get(id);
-        }
+        return products[id];
     }
-    return;
 }
